@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Veterinary bacteriology reference for Gram-positive and Gram-negative bacteria.">
+<title>Veterinary Bacteriology | Expanded Study Atlas</title>
+<style>
+:root{--bg:#f3f6fa;--card:#fff;--ink:#172338;--muted:#64748b;--blue:#173f70;--teal:#0e7490;--line:#dce5ef;--gold:#d69e36;--green:#176b50;--red:#9a3e48}
+*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+header{background:linear-gradient(120deg,#102b4c,#17617a);color:white;padding:32px 18px}
+.wrap{max-width:1150px;margin:auto;padding:0 16px}.eyebrow{color:#b9e6f0;font-size:13px;letter-spacing:1px}
+h1{font-size:clamp(26px,5vw,42px);margin:7px 0}header p{margin:0;color:#e2eef6;font-size:17px}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.stat,.panel,.bcard{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:15px}
+.stat strong{display:block;font-size:25px;color:var(--teal)}
+.controls{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:10px;margin:20px 0}
+input,select,button{font:inherit;border-radius:10px;border:1px solid var(--line);padding:12px;background:white;color:var(--ink);min-width:0;transition:border-color .2s ease,box-shadow .2s ease,background-color .2s ease,transform .2s ease}
+button{cursor:pointer;background:var(--blue);color:white;border:0}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:active{transform:translateY(0)}input:focus,select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(14,116,144,.14)}select{cursor:pointer}
+.layout{display:grid;grid-template-columns:235px 1fr;gap:18px;align-items:start}
+aside{position:sticky;top:12px}.panel h3{margin:0 0 8px;color:var(--blue)}
+.navbtn{display:block;width:100%;text-align:left;background:white;color:var(--ink);border:1px solid var(--line);margin:7px 0}
+.navbtn.active{background:#e7f3f7;border-color:#8fc5d2;color:#07566d;box-shadow:0 0 0 2px rgba(14,116,144,.08)}
+.section-title{margin:4px 0 12px;color:var(--blue)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.bcard{transition:transform .2s ease,box-shadow .2s ease}.bcard:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(23,35,56,.08)}.bcard h3{margin:0;color:#124d70;font-size:19px}
+.latin{font-weight:bold;color:#0e7490;overflow-wrap:anywhere}
+.tag{display:inline-block;background:#eaf2f8;color:#244e70;border-radius:20px;padding:2px 9px;font-size:12px;margin:5px 4px 5px 0}
+.gram{font-weight:bold}.gram.positive{color:var(--green)}.gram.negative{color:var(--red)}
+details{border-top:1px solid var(--line);margin-top:10px;padding-top:8px}
+summary{cursor:pointer;color:var(--blue);font-weight:bold}
+dl{display:grid;grid-template-columns:125px 1fr;gap:6px 10px;margin:8px 0;font-size:14px}
+dt{font-weight:bold;color:#475569}dd{margin:0}
+.note{background:#fff8e8;border-left:4px solid var(--gold);padding:12px;border-radius:9px;margin:18px 0;color:#654b1b}
+footer{text-align:center;color:var(--muted);padding:28px 10px;font-size:13px}
+.hidden{display:none}.small{color:var(--muted);font-size:13px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}aside{position:static}.controls{grid-template-columns:1fr 1fr}.controls input{grid-column:1/-1}.cards{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}dl{grid-template-columns:110px 1fr}}
+@media(max-width:420px){.stats{grid-template-columns:1fr 1fr}.controls{grid-template-columns:1fr}.controls input{grid-column:auto}}
+
+.visual-atlas{margin:26px 0 32px}.visual-heading{margin-bottom:14px}.eyebrow-dark{font-size:12px;letter-spacing:1.5px;color:var(--teal);font-weight:800}.visual-heading h2{margin:3px 0;color:var(--blue);font-size:clamp(22px,4vw,30px)}.visual-heading p{color:var(--muted)}.visual-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.visual-card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden}.visual-copy{padding:13px 15px}.visual-copy h3{margin:5px 0 3px;color:var(--blue);font-size:17px}.visual-copy p{margin:0;color:var(--muted);font-size:13px}.diagram{height:165px;background:#f4f7fb;display:flex;align-items:center;justify-content:center;gap:18px;padding:15px;overflow:hidden}.gram{flex-direction:column;gap:4px}.purple,.pink{display:flex;gap:8px}.purple i{width:14px;height:14px;border-radius:50%;background:#6942a5}.pink i{width:24px;height:10px;border-radius:10px;background:#df7895;transform:rotate(-25deg)}.shapes>div{display:flex;flex-direction:column;align-items:center;gap:9px}.coccus{width:26px;height:26px;border-radius:50%;background:#7352a4;box-shadow:12px 3px #7352a4,-8px 12px #7352a4}.rod{width:40px;height:14px;border-radius:12px;background:#d47b8e;transform:rotate(-25deg)}.spiral{width:40px;height:24px;border:4px solid #2e8a87;border-left-color:transparent;border-right-color:transparent;border-radius:50%}.plate{width:110px;height:110px;border:8px solid #d6e1eb;border-radius:50%;background:#f9e8d5;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;justify-items:center;padding:13px}.plate i{width:9px;height:9px;border-radius:50%;background:#d8a46c}.tubes i{width:22px;height:75px;border:3px solid #c4d1df;border-top:0;border-radius:4px 4px 12px 12px;background:linear-gradient(transparent 38%,#e8bd5c 39%)}.tubes i:nth-child(2){background:linear-gradient(transparent 38%,#df91ae 39%)}.tubes i:nth-child(3){background:linear-gradient(transparent 38%,#70ae8d 39%)}.tubes i:nth-child(4){background:linear-gradient(transparent 38%,#d96c5b 39%)}.wells{display:grid;grid-template-columns:repeat(3,34px);gap:12px}.wells i{width:34px;height:34px;border-radius:50%;background:#e5eaf0;border:5px solid #cbd6e2}.wells .positive{background:#d46b6b}.pathology{position:relative}.pathology b{padding:22px 35px;border-radius:45%;background:#dce8ef;color:#668096}.pathology i{position:absolute;width:16px;height:16px;border-radius:50%;background:#c45c62;box-shadow:0 0 0 6px #f0c8c8}.pathology i:nth-of-type(1){left:53%;top:42%}.pathology i:nth-of-type(2){left:65%;top:58%}.bcard .resource-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.resource-links a{display:inline-block;padding:7px 10px;border-radius:8px;background:#edf5f8;color:#07566d;text-decoration:none;font-size:12px;font-weight:700}.reference-panel{margin:24px 0;padding:20px;background:#fff;border:1px solid var(--line);border-radius:15px}.reference-panel h2{color:var(--blue);font-size:21px}.reference-panel li{margin:8px 0}.reference-panel a{color:var(--teal);font-weight:700}@media(max-width:850px){.visual-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:520px){.visual-grid{grid-template-columns:1fr}}
+
+
+.in-site-lab{margin-top:14px;padding:13px;border-radius:12px;background:#f6f9fc;border:1px solid #dce5ef}.in-site-lab h4{margin:0 0 10px;color:#173f70}.mini-atlas{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini-visual{background:#fff;border:1px solid #dce5ef;border-radius:10px;padding:10px;display:flex;align-items:center;flex-direction:column;gap:6px;text-align:center}.mini-visual small{font-size:11px;color:#64748b}.micro-field{width:100%;height:82px;border-radius:8px;background:#f2edf8;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;padding:10px}.micro-field.negative{background:#fbeef1}.micro-field.negative .rod-cell,.micro-field.negative .curved-cell{background:#d76e8b}.micro-field.positive .rod-cell,.micro-field.positive .coccus-dot,.micro-field.positive .curved-cell{background:#7050a3}.coccus-dot{display:inline-block;width:13px;height:13px;border-radius:50%;background:#7050a3;box-shadow:4px 2px 0 #a58bc8}.rod-cell{display:inline-block;width:27px;height:9px;border-radius:9px;background:#7050a3;transform:rotate(-18deg)}.curved-cell{display:inline-block;width:25px;height:13px;border:4px solid #7050a3;border-left-color:transparent;border-right-color:transparent;border-radius:50%}.culture-sketch{height:82px;width:100%;border-radius:50%;max-width:82px;background:#f7e8d8;border:7px solid #d6e1eb;display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap;padding:12px}.culture-sketch span{width:8px;height:8px;border-radius:50%;background:#d2a06c}.in-site-guide{margin:28px 0}.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.guide-grid article{background:#fff;border:1px solid #dce5ef;border-radius:13px;padding:15px}.guide-grid h3{margin:0;color:#173f70}.guide-grid p{font-size:13px;color:#475569;margin:8px 0}.guide-art{height:105px;background:#f3f6fa;border-radius:9px;margin:10px 0;display:flex;align-items:center;justify-content:center;gap:12px}.gram-art{flex-wrap:wrap}.purple-dot{width:16px;height:16px;border-radius:50%;background:#7050a3}.pink-rod{width:27px;height:10px;border-radius:10px;background:#d76e8b;transform:rotate(-20deg)}.shape-art .coccus-dot{width:20px;height:20px}.shape-art .rod-cell{width:38px;height:13px}.shape-art .curved-cell{width:35px;height:19px}.plate-art .plate{width:85px;height:85px}.tube-art i{width:20px;height:65px;border:3px solid #c4d1df;border-top:0;border-radius:3px 3px 10px 10px;background:linear-gradient(transparent 40%,#e8bd5c 41%)}.tube-art i:nth-child(2){background:linear-gradient(transparent 40%,#df91ae 41%)}.tube-art i:nth-child(3){background:linear-gradient(transparent 40%,#70ae8d 41%)}.tube-art i:nth-child(4){background:linear-gradient(transparent 40%,#d96c5b 41%)}.sero-art{display:grid;grid-template-columns:repeat(3,25px);gap:10px}.sero-art i{width:25px;height:25px;border-radius:50%;background:#dfe6ed;border:4px solid #c6d2df}.sero-art i:nth-child(4){background:#d46b6b}.path-art{position:relative}.path-art span{background:#dce8ef;padding:22px 30px;border-radius:45%;font-weight:bold;color:#668096}.path-art i{position:absolute;width:13px;height:13px;background:#c45c62;border-radius:50%;box-shadow:0 0 0 5px #f0c8c8}.path-art i:nth-of-type(1){left:52%;top:38%}.path-art i:nth-of-type(2){left:63%;top:57%}
+@media(max-width:520px){.guide-grid,.mini-atlas{grid-template-columns:1fr}}
+
+
+.real-photo{margin:14px 0 4px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.real-photo img{display:block;width:100%;max-height:260px;object-fit:contain;background:#f7f8fb}
+.real-photo figcaption{padding:10px 12px;font-size:12px;color:var(--muted)}
+.real-photo figcaption b{color:var(--blue)}
+.real-photo a{color:var(--teal);font-weight:700;text-decoration:none}
+.photo-unavailable{font-size:12px;color:var(--muted);background:#f6f9fc;border-radius:8px;padding:9px;margin-top:10px}
+
+.missing-photo .photo-pending{min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#eef2f7;color:#475569;text-align:center;padding:18px;border:1px dashed #94a3b8;border-radius:12px}.missing-photo .photo-pending:first-line{font-size:30px}
+
+.study-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.study-panel{background:#fff;border:1px solid #dce5ef;border-radius:11px;padding:12px;min-width:0}
+.study-panel h5{margin:0 0 7px;color:#173f70;font-size:14px}
+.study-panel p{margin:5px 0;font-size:12px;line-height:1.55;color:#334155}
+.study-panel .pending{color:#8a5a18;background:#fff8e8;border:1px solid #f1dfb9;border-radius:7px;padding:7px}
+.study-panel .verified{color:#17623d}
+.study-panel img{width:100%;height:145px;object-fit:contain;background:#f7f9fc;border-radius:8px}
+@media(max-width:600px){.study-panels{grid-template-columns:1fr}}
+
+</style></head>
+<body>
+<header><div class="wrap"><div class="eyebrow">VETERINARY MEDICINE • BACTERIOLOGY</div>
+<h1>Gram-Positive & Gram-Negative Bacteria</h1>
+<p>A veterinary bacteriology reference library with in-page microscopy photographs for selected species and educational visual guides.</p></div></header>
+<main class="wrap">
+<div class="stats">
+<div class="stat"><strong id="count">0</strong><span>Bacteria listed</span></div>
+<div class="stat"><strong>2</strong><span>Gram groups</span></div>
+</div>
+
+<section class="visual-atlas" id="visual-atlas">
+  <div class="visual-heading"><div class="eyebrow-dark">VISUAL LEARNING ATLAS</div><h2>Laboratory Visual Guide</h2><p>Study sections for organism-specific microscopy, culture media, biochemical identification, serology and veterinary diseases. Unverified image fields are clearly marked rather than filled with unrelated photographs.</p></div>
+  <div class="visual-grid">
+    <article class="visual-card"><div class="diagram gram"><div class="purple"><i></i><i></i><i></i><i></i><i></i></div><b>Gram-positive: purple</b><div class="pink"><i></i><i></i><i></i><i></i><i></i></div><b>Gram-negative: pink</b></div><div class="visual-copy"><span class="tag">Gram stain</span><h3>Gram reaction</h3><p>Conceptual guide to the usual staining appearance. Actual microscopy depends on specimen quality and technique.</p></div></article>
+    <article class="visual-card"><div class="diagram shapes"><div><span class="coccus"></span><b>Cocci</b></div><div><span class="rod"></span><b>Bacilli</b></div><div><span class="spiral"></span><b>Spiral forms</b></div></div><div class="visual-copy"><span class="tag">Morphology</span><h3>Bacterial shapes</h3><p>Cell shape and arrangement are descriptive features, not species identification by themselves.</p></div></article>
+    <article class="visual-card"><div class="diagram"><div class="plate"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="visual-copy"><span class="tag">Culture media</span><h3>Colony morphology</h3><p>Colony appearance may support identification but must be interpreted with the medium and confirmatory findings.</p></div></article>
+    <article class="visual-card"><div class="diagram tubes"><i></i><i></i><i></i><i></i></div><div class="visual-copy"><span class="tag">Biochemical tests</span><h3>Biochemical reactions</h3><p>Examples include catalase, oxidase, indole, urease, citrate and TSI. Use validated references and controls.</p></div></article>
+    <article class="visual-card"><div class="diagram wells"><i></i><i></i><i></i><i></i><i class="positive"></i><i></i></div><div class="visual-copy"><span class="tag">Serology</span><h3>Serological testing</h3><p>Serology is organism- and disease-specific; it is relevant to selected infections, not every bacterium.</p></div></article>
+    <article class="visual-card"><div class="diagram pathology"><b>VETERINARY</b><i></i><i></i></div><div class="visual-copy"><span class="tag">Disease pathology</span><h3>Clinical signs and lesions</h3><p>Clinical findings vary by host, strain, disease stage and affected organ.</p></div></article>
+  </div>
+</section>
+
+<div class="controls">
+<input id="search" placeholder="Search by bacterial name, host, or disease..." aria-label="Search bacteria">
+<select id="gram"><option value="all">All Gram types</option><option value="positive">Gram-positive</option><option value="negative">Gram-negative</option></select>
+<select id="group"><option value="all">All bacterial groups</option></select>
+<button id="reset">Reset filters</button>
+</div>
+<div class="layout">
+<aside><div class="panel"><h3>Browse by Gram stain</h3>
+<button class="navbtn active" data-gram="all">All bacteria</button>
+<button class="navbtn" data-gram="positive">Gram-positive bacteria</button>
+<button class="navbtn" data-gram="negative">Gram-negative bacteria</button>
+<p class="small">Educational reference. Species taxonomy and diagnostic interpretation may vary by current laboratory standards.</p>
+</div></aside>
+<section><h2 class="section-title">Bacterial Reference Library</h2><div id="cards" class="cards"></div>
+<p id="empty" class="panel hidden">No matching bacteria found. Try a different search or filter.</p>
+<div class="note"><b>Scientific note:</b> This is a study reference, not a complete taxonomic catalogue. Some organisms have variable Gram-stain appearance or are better characterized by special stains or molecular methods. Clinical diagnosis and treatment decisions require a qualified veterinarian and appropriate laboratory guidance. No pathogen cultivation procedures are provided.</div>
+</section></div>
+
+
+
+<section class="reference-panel in-site-guide" id="lab-guide">
+  <div class="eyebrow-dark">BUILT-IN STUDY CONTENT</div>
+  <h2>Laboratory Identification Guide</h2>
+  <p>These learning notes are part of this website. They are general principles; the correct test panel depends on the suspected organism, sample and veterinary laboratory protocol.</p>
+  <div class="guide-grid">
+    <article><h3>1. Gram staining</h3><div class="guide-art gram-art"><span class="purple-dot"></span><span class="purple-dot"></span><span class="purple-dot"></span><span class="pink-rod"></span><span class="pink-rod"></span></div><p><b>Gram-positive:</b> purple/violet appearance due to retention of crystal violet–iodine complex.</p><p><b>Gram-negative:</b> pink/red appearance after counterstaining.</p><p>Old cultures, damaged cells, thick smears and staining errors can produce variable results.</p></article>
+    <article><h3>2. Morphology and arrangement</h3><div class="guide-art shape-art"><span class="coccus-dot"></span><span class="rod-cell"></span><span class="curved-cell"></span></div><p><b>Cocci:</b> spherical cells; may occur in clusters, chains, pairs or tetrads.</p><p><b>Bacilli:</b> rod-shaped cells; some are short, pleomorphic or spore-forming.</p><p><b>Curved/spiral forms:</b> include curved rods and helical organisms.</p></article>
+    <article><h3>3. Culture and colony description</h3><div class="guide-art plate-art"><div class="plate"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><p>Describe colony size, shape, margin, elevation, surface, opacity, pigment and hemolysis when relevant.</p><p>Culture appearance alone is not definitive identification. Media and incubation requirements differ among organisms.</p></article>
+    <article><h3>4. Biochemical identification</h3><div class="guide-art tube-art"><i></i><i></i><i></i><i></i></div><p>Common examples include catalase, coagulase, oxidase, indole, urease, citrate, carbohydrate reactions and selected enzyme tests.</p><p>Not every test applies to every organism. Interpret with positive/negative controls and validated reference criteria.</p></article>
+    <article><h3>5. Serology and antigen tests</h3><div class="guide-art sero-art"><i></i><i></i><i></i><i></i><i></i><i></i></div><p>Serology detects antibodies or antigens, depending on the assay. It is useful for selected infections and surveillance programs.</p><p>It is not a universal test for all bacteria; timing, vaccination and exposure history can affect interpretation.</p></article>
+    <article><h3>6. Disease pathology</h3><div class="guide-art path-art"><span>VET</span><i></i><i></i></div><p>Record the affected system, species/host, age group, clinical pattern and gross or histopathological findings.</p><p>Lesions are not always specific to one bacterium and should be linked to laboratory evidence.</p></article>
+  </div>
+  <div class="note"><b>Microscopy note:</b> Only verified organism-specific micrographs are displayed. Where an exact image has not yet been verified, no substitute species image is shown, to prevent incorrect identification.</div>
+</section>
+
+</main>
+<footer>Veterinary Bacteriology Reference • Educational use</footer>
+<script>
+const bacteria = [{"name": "Staphylococcus aureus", "gram": "positive", "group": "cocci", "arrangement": "Clusters", "identification": "Gram-positive cocci; catalase-positive; usually coagulase-positive; non-spore-forming.", "hosts": "Cattle, sheep, goats, horses, dogs, cats, poultry.", "diseases": "Mastitis, skin and wound infections, abscesses, septic arthritis.", "virulence": "Coagulase, protein A, adhesins, hemolysins, and other toxins.", "diagnosis": "Clinical assessment, culture-based identification, and susceptibility testing when indicated.", "prevention": "Milking hygiene, wound care, biosecurity, and prudent antimicrobial use."}, {"name": "Staphylococcus pseudintermedius", "gram": "positive", "group": "cocci", "arrangement": "Clusters", "identification": "Gram-positive cocci; catalase-positive; coagulase-positive in typical isolates.", "hosts": "Dogs mainly; other animals may be affected.", "diseases": "Pyoderma, otitis, wound and postoperative infections.", "virulence": "Adhesins, enzymes, and strain-dependent resistance mechanisms.", "diagnosis": "Species-level laboratory identification and antimicrobial susceptibility testing.", "prevention": "Skin and ear care, hygiene, infection control, and prudent antimicrobial use."}, {"name": "Staphylococcus hyicus", "gram": "positive", "group": "cocci", "arrangement": "Clusters", "identification": "Gram-positive cocci; catalase-positive; coagulase variable.", "hosts": "Pigs mainly.", "diseases": "Exudative epidermitis (greasy pig disease).", "virulence": "Exfoliative toxins in pathogenic strains.", "diagnosis": "Clinical findings supported by laboratory identification.", "prevention": "Herd hygiene, reduction of skin injuries, and good husbandry."}, {"name": "Streptococcus equi subsp. equi", "gram": "positive", "group": "cocci", "arrangement": "Chains or pairs", "identification": "Gram-positive cocci; catalase-negative; beta-hemolytic; Lancefield group C.", "hosts": "Horses.", "diseases": "Strangles, with upper respiratory disease and lymph node abscessation.", "virulence": "Capsule, M protein-like factors, and immune-evasion mechanisms.", "diagnosis": "Clinical assessment and veterinary laboratory testing.", "prevention": "Isolation, hygiene, movement control, and vaccination where appropriate."}, {"name": "Streptococcus equi subsp. zooepidemicus", "gram": "positive", "group": "cocci", "arrangement": "Chains", "identification": "Gram-positive cocci; catalase-negative; commonly beta-hemolytic.", "hosts": "Horses and other mammals.", "diseases": "Respiratory, uterine, wound, and opportunistic systemic infections.", "virulence": "Adhesins and factors supporting tissue invasion and immune evasion.", "diagnosis": "Culture and laboratory identification interpreted with clinical findings.", "prevention": "Hygiene, wound care, and prompt veterinary assessment."}, {"name": "Streptococcus agalactiae", "gram": "positive", "group": "cocci", "arrangement": "Chains", "identification": "Gram-positive cocci; catalase-negative; group B streptococcus.", "hosts": "Cattle; other hosts may be affected.", "diseases": "Contagious bovine mastitis.", "virulence": "Capsule and adhesion-associated factors.", "diagnosis": "Milk sampling and laboratory identification.", "prevention": "Milking hygiene, udder-health monitoring, and mastitis-control programs."}, {"name": "Streptococcus dysgalactiae", "gram": "positive", "group": "cocci", "arrangement": "Chains", "identification": "Gram-positive cocci; catalase-negative; hemolysis may vary.", "hosts": "Cattle and other mammals.", "diseases": "Mastitis and soft-tissue infections.", "virulence": "Adhesins and enzymes.", "diagnosis": "Clinical assessment and laboratory identification.", "prevention": "Milking hygiene, teat care, and wound management."}, {"name": "Streptococcus suis", "gram": "positive", "group": "cocci", "arrangement": "Pairs or short chains", "identification": "Gram-positive cocci; catalase-negative; commonly alpha-hemolytic.", "hosts": "Pigs; zoonotic potential is recognized.", "diseases": "Meningitis, arthritis, septicemia, and pneumonia.", "virulence": "Capsule and multiple virulence-associated factors.", "diagnosis": "Laboratory identification; serotyping may be useful.", "prevention": "Biosecurity and protective measures when handling sick pigs."}, {"name": "Streptococcus uberis", "gram": "positive", "group": "cocci", "arrangement": "Chains", "identification": "Gram-positive cocci; catalase-negative; important environmental streptococcus.", "hosts": "Cattle.", "diseases": "Environmental mastitis.", "virulence": "Adhesion and iron-acquisition factors.", "diagnosis": "Milk examination and laboratory identification.", "prevention": "Clean bedding, teat hygiene, and environmental management."}, {"name": "Enterococcus faecalis / Enterococcus faecium", "gram": "positive", "group": "cocci", "arrangement": "Pairs or short chains", "identification": "Gram-positive cocci; catalase-negative or weak; bile-esculin positive in common identification schemes.", "hosts": "Intestinal tract of humans and animals; environment.", "diseases": "Opportunistic infections, including urinary, wound, bloodstream, and occasional udder infections.", "virulence": "Persistence, biofilm formation, and acquired antimicrobial resistance.", "diagnosis": "Species identification and susceptibility testing.", "prevention": "Infection control and prudent antimicrobial use."}, {"name": "Aerococcus viridans", "gram": "positive", "group": "cocci", "arrangement": "Pairs, tetrads, or clusters", "identification": "Gram-positive cocci; catalase-negative; may resemble streptococci.", "hosts": "Various animals; environmental sources occur.", "diseases": "Occasional mastitis and opportunistic infections.", "virulence": "Virulence significance varies by isolate.", "diagnosis": "Accurate laboratory identification and clinical correlation.", "prevention": "Hygiene and appropriate management of affected animals."}, {"name": "Bacillus anthracis", "gram": "positive", "group": "spore", "arrangement": "Large rods in chains", "identification": "Large Gram-positive spore-forming rod; non-motile; poly-D-glutamate capsule.", "hosts": "Ruminants mainly; zoonotic disease.", "diseases": "Anthrax, an acute systemic disease that may cause sudden death.", "virulence": "Protective antigen, edema factor, lethal factor, and capsule.", "diagnosis": "Suspected cases require immediate notification and handling by authorized veterinary/public-health authorities; do not open carcasses.", "prevention": "Official control measures, vaccination in endemic areas, and safe disposal under authority guidance."}, {"name": "Bacillus cereus", "gram": "positive", "group": "spore", "arrangement": "Large rods", "identification": "Gram-positive, spore-forming, usually motile rod; commonly beta-hemolytic.", "hosts": "Environment, feed, foods, and various animals.", "diseases": "Food poisoning and occasional opportunistic infections.", "virulence": "Enterotoxins, emetic toxin, and tissue-damaging enzymes.", "diagnosis": "Clinical and food-safety investigation with appropriate laboratory testing.", "prevention": "Food hygiene, temperature control, and safe storage."}, {"name": "Clostridium perfringens", "gram": "positive", "group": "spore", "arrangement": "Large rods", "identification": "Gram-positive anaerobic spore-forming rod; non-motile; toxin-producing.", "hosts": "Cattle, sheep, goats, horses, poultry, and other species.", "diseases": "Enteritis, enterotoxemia, and gas gangrene.", "virulence": "Major toxins; toxinotype classification is based on toxin profile.", "diagnosis": "Clinical, pathological, and laboratory findings considered together.", "prevention": "Appropriate vaccination, balanced feeding, and avoidance of sudden dietary changes."}, {"name": "Clostridium tetani", "gram": "positive", "group": "spore", "arrangement": "Rod with terminal spherical spore", "identification": "Gram-positive anaerobic spore-forming rod; terminal spore may give a drumstick appearance.", "hosts": "Most mammals; horses are particularly susceptible.", "diseases": "Tetanus with muscle rigidity and spasms.", "virulence": "Tetanospasmin neurotoxin.", "diagnosis": "Primarily a clinical diagnosis supported by wound history.", "prevention": "Vaccination, booster programs, and veterinary wound care."}, {"name": "Clostridium botulinum", "gram": "positive", "group": "spore", "arrangement": "Rods", "identification": "Anaerobic spore-forming rod; toxin-producing species complex.", "hosts": "Cattle, horses, waterfowl, and other species.", "diseases": "Botulism with flaccid paralysis and weakness.", "virulence": "Botulinum neurotoxins.", "diagnosis": "Specialized toxin testing and epidemiological assessment.", "prevention": "Prevent access to spoiled feed, contaminated material, and carcasses."}, {"name": "Clostridium chauvoei", "gram": "positive", "group": "spore", "arrangement": "Rods", "identification": "Gram-positive anaerobic spore-forming rod.", "hosts": "Cattle and sheep.", "diseases": "Blackleg, an acute necrotizing myositis.", "virulence": "Toxins and tissue-damaging enzymes.", "diagnosis": "Clinical and pathological assessment with laboratory confirmation.", "prevention": "Vaccination and appropriate pasture and herd management."}, {"name": "Clostridium septicum", "gram": "positive", "group": "spore", "arrangement": "Rods", "identification": "Gram-positive anaerobic spore-forming, motile rod.", "hosts": "Sheep, cattle, and other species.", "diseases": "Braxy and necrotizing soft-tissue infections.", "virulence": "Alpha toxin and other virulence factors.", "diagnosis": "Clinical and pathological findings with laboratory testing.", "prevention": "Vaccination where indicated and reduction of tissue injuries."}, {"name": "Clostridium novyi", "gram": "positive", "group": "spore", "arrangement": "Rods", "identification": "Anaerobic spore-forming rod; toxin-producing.", "hosts": "Sheep and cattle.", "diseases": "Black disease and necrotic hepatitis.", "virulence": "Necrotizing toxins, including alpha toxin.", "diagnosis": "Epidemiology, pathology, and laboratory testing.", "prevention": "Liver fluke control and vaccination according to regional risk."}, {"name": "Clostridioides difficile", "gram": "positive", "group": "spore", "arrangement": "Rods", "identification": "Gram-positive anaerobic spore-forming rod; formerly Clostridium difficile.", "hosts": "Foals and other animals; humans also affected.", "diseases": "Colitis and diarrhea, particularly with predisposing factors.", "virulence": "Toxins A and B in toxigenic strains.", "diagnosis": "Toxin or molecular tests interpreted with clinical findings.", "prevention": "Environmental hygiene, spore control, and prudent antimicrobial use."}, {"name": "Listeria monocytogenes", "gram": "positive", "group": "nonspore", "arrangement": "Short rods or coccobacilli", "identification": "Small Gram-positive non-spore-forming rod; facultative intracellular; tumbling motility may be observed.", "hosts": "Ruminants, humans, and other animals.", "diseases": "Encephalitis, abortion, and septicemia.", "virulence": "Listeriolysin O and intracellular invasion factors.", "diagnosis": "Clinical findings, feed history, and laboratory testing.", "prevention": "Silage quality control and avoidance of spoiled silage."}, {"name": "Erysipelothrix rhusiopathiae", "gram": "positive", "group": "nonspore", "arrangement": "Slender rods", "identification": "Slender Gram-positive non-spore-forming rod; non-motile; catalase-negative.", "hosts": "Pigs, poultry, fish; occupational zoonotic infection can occur.", "diseases": "Swine erysipelas, arthritis, skin lesions, and endocarditis.", "virulence": "Neuraminidase and surface-associated factors.", "diagnosis": "Laboratory identification with clinical correlation.", "prevention": "Vaccination where appropriate, hygiene, and protective handling."}, {"name": "Corynebacterium pseudotuberculosis", "gram": "positive", "group": "nonspore", "arrangement": "Pleomorphic club-shaped rods", "identification": "Gram-positive pleomorphic club-shaped rod; non-spore-forming.", "hosts": "Sheep, goats, and horses.", "diseases": "Caseous lymphadenitis in small ruminants; pigeon fever in horses.", "virulence": "Phospholipase D and other factors.", "diagnosis": "Lesion assessment and laboratory identification.", "prevention": "Isolation, equipment hygiene, and wound management."}, {"name": "Corynebacterium renale group", "gram": "positive", "group": "nonspore", "arrangement": "Pleomorphic rods", "identification": "Gram-positive pleomorphic non-spore-forming rods.", "hosts": "Cattle.", "diseases": "Cystitis and pyelonephritis.", "virulence": "Adhesion-associated urinary pathogenic factors.", "diagnosis": "Urinalysis and laboratory identification.", "prevention": "Hygiene and veterinary herd management."}, {"name": "Trueperella pyogenes", "gram": "positive", "group": "nonspore", "arrangement": "Pleomorphic rods", "identification": "Gram-positive pleomorphic rod; formerly Arcanobacterium pyogenes.", "hosts": "Cattle, sheep, pigs, and other animals.", "diseases": "Abscesses, metritis, mastitis, and suppurative infections.", "virulence": "Pyolysin and adhesion factors.", "diagnosis": "Appropriate sample collection and laboratory identification.", "prevention": "Wound, calving, and herd hygiene."}, {"name": "Rhodococcus equi", "gram": "positive", "group": "nonspore", "arrangement": "Coccobacilli; sometimes branching", "identification": "Gram-positive pleomorphic, partially acid-fast coccobacillus; intracellular pathogen.", "hosts": "Foals mainly.", "diseases": "Pyogranulomatous pneumonia and abscesses; intestinal disease may occur.", "virulence": "Virulence-associated proteins including VapA in relevant strains.", "diagnosis": "Clinical assessment, imaging, and specialized laboratory testing.", "prevention": "Farm environmental management, dust reduction, and foal monitoring."}, {"name": "Actinomyces bovis", "gram": "positive", "group": "branch", "arrangement": "Branching filaments", "identification": "Gram-positive branching filamentous bacterium; anaerobic or microaerophilic; non-spore-forming.", "hosts": "Cattle.", "diseases": "Actinomycosis (lumpy jaw), a granulomatous jaw disease.", "virulence": "Local tissue invasion and granulomatous inflammation.", "diagnosis": "Lesion assessment and laboratory identification.", "prevention": "Prevent oral trauma and maintain oral health."}, {"name": "Nocardia species", "gram": "positive", "group": "branch", "arrangement": "Branching, fragmented filaments", "identification": "Aerobic branching Gram-positive filaments; weakly acid-fast.", "hosts": "Various animals; opportunistic infections.", "diseases": "Pulmonary, cutaneous, and systemic nocardiosis.", "virulence": "Intracellular persistence and resistance to some host defenses.", "diagnosis": "Specialized laboratory identification; distinguish from fungi and other actinomycetes.", "prevention": "Reduce dust exposure and seek veterinary assessment."}, {"name": "Dermatophilus congolensis", "gram": "positive", "group": "branch", "arrangement": "Branching filaments", "identification": "Gram-positive branching filamentous bacterium that divides into rows of coccoid cells.", "hosts": "Cattle, sheep, horses, and other animals.", "diseases": "Dermatophilosis, a crusting dermatitis associated with wet conditions.", "virulence": "Adhesion and invasion of superficial skin layers.", "diagnosis": "Clinical examination and microscopic/laboratory testing.", "prevention": "Keep skin dry where possible, control insects, and manage skin injuries."}, {"name": "Pasteurella multocida", "gram": "negative", "group": "coccobacilli", "arrangement": "Small coccobacilli; bipolar staining may be seen", "identification": "Gram-negative, non-motile coccobacillus; facultative anaerobe.", "hosts": "Cattle, sheep, goats, pigs, rabbits, poultry, cats, and dogs.", "diseases": "Pneumonia, hemorrhagic septicemia, fowl cholera, and bite-wound infections.", "virulence": "Capsule, lipopolysaccharide, adhesins, and toxins in some strains.", "diagnosis": "Clinical assessment with culture or molecular identification as appropriate.", "prevention": "Vaccination where available, ventilation, biosecurity, and wound care."}, {"name": "Mannheimia haemolytica", "gram": "negative", "group": "coccobacilli", "arrangement": "Coccobacilli", "identification": "Gram-negative coccobacillus; commonly beta-hemolytic.", "hosts": "Cattle, sheep, and goats.", "diseases": "Bovine and ovine respiratory disease, including pneumonic pasteurellosis.", "virulence": "Leukotoxin, capsule, and lipopolysaccharide.", "diagnosis": "Respiratory disease assessment and laboratory identification.", "prevention": "Reduce transport and environmental stress; improve ventilation and vaccination programs."}, {"name": "Histophilus somni", "gram": "negative", "group": "coccobacilli", "arrangement": "Small pleomorphic coccobacilli", "identification": "Small Gram-negative pleomorphic bacterium.", "hosts": "Cattle.", "diseases": "Thrombotic meningoencephalitis, pneumonia, myocarditis, and reproductive disease.", "virulence": "Lipooligosaccharide, adhesins, and immune-evasion factors.", "diagnosis": "Clinical assessment with laboratory confirmation.", "prevention": "Biosecurity, stress reduction, and herd-health programs."}, {"name": "Brucella abortus", "gram": "negative", "group": "coccobacilli", "arrangement": "Small coccobacilli", "identification": "Small Gram-negative, non-motile, facultative intracellular coccobacillus.", "hosts": "Cattle; zoonotic.", "diseases": "Brucellosis, abortion, infertility, and reproductive losses.", "virulence": "Intracellular survival and smooth lipopolysaccharide.", "diagnosis": "Official serological and confirmatory testing; follow animal-health authority procedures.", "prevention": "Control programs, vaccination where authorized, and occupational protection."}, {"name": "Brucella melitensis", "gram": "negative", "group": "coccobacilli", "arrangement": "Small coccobacilli", "identification": "Small Gram-negative, non-motile, facultative intracellular coccobacillus.", "hosts": "Sheep and goats; zoonotic.", "diseases": "Brucellosis, abortion, orchitis, and reproductive disease.", "virulence": "Intracellular survival and smooth lipopolysaccharide.", "diagnosis": "Official serological and confirmatory testing.", "prevention": "Control programs, authorized vaccination, and safe handling of reproductive materials."}, {"name": "Bordetella bronchiseptica", "gram": "negative", "group": "coccobacilli", "arrangement": "Small rods or coccobacilli", "identification": "Gram-negative aerobic coccobacillus; motile.", "hosts": "Dogs, pigs, rabbits, cats, and other mammals.", "diseases": "Kennel cough, atrophic rhinitis complex, and respiratory disease.", "virulence": "Adhesins, toxins, and secretion systems.", "diagnosis": "Respiratory clinical assessment and laboratory identification.", "prevention": "Vaccination where appropriate, ventilation, and biosecurity."}, {"name": "Avibacterium paragallinarum", "gram": "negative", "group": "coccobacilli", "arrangement": "Pleomorphic rods or coccobacilli", "identification": "Gram-negative pleomorphic bacterium; fastidious.", "hosts": "Chickens.", "diseases": "Infectious coryza with facial swelling and nasal discharge.", "virulence": "Capsule and outer-membrane-associated factors.", "diagnosis": "Clinical assessment and specialized laboratory identification.", "prevention": "Biosecurity, vaccination, and flock management."}, {"name": "Moraxella bovis", "gram": "negative", "group": "coccobacilli", "arrangement": "Short rods or diplobacilli", "identification": "Gram-negative, aerobic bacterium.", "hosts": "Cattle.", "diseases": "Infectious bovine keratoconjunctivitis (pinkeye).", "virulence": "Pili and cytotoxins including hemolysin.", "diagnosis": "Ocular examination and laboratory identification when indicated.", "prevention": "Fly control, eye protection, and vaccination where available."}, {"name": "Escherichia coli", "gram": "negative", "group": "rods", "arrangement": "Straight rods", "identification": "Gram-negative, facultatively anaerobic rod; lactose fermenter; oxidase-negative.", "hosts": "All major domestic species and humans.", "diseases": "Neonatal diarrhea, septicemia, urinary infections, mastitis, and poultry colibacillosis.", "virulence": "Fimbriae, adhesins, capsules, endotoxin, and pathotype-specific toxins.", "diagnosis": "Clinical context plus culture, pathotype testing, and susceptibility testing when indicated.", "prevention": "Colostrum management, sanitation, clean water, and biosecurity."}, {"name": "Salmonella enterica", "gram": "negative", "group": "rods", "arrangement": "Straight rods", "identification": "Gram-negative, facultatively anaerobic, usually motile rod; non-lactose fermenter.", "hosts": "Cattle, sheep, pigs, poultry, horses, reptiles, and humans.", "diseases": "Enteritis, septicemia, abortion, and foodborne zoonosis.", "virulence": "Type III secretion systems, endotoxin, and intracellular survival factors.", "diagnosis": "Fecal or tissue testing with culture or molecular methods as appropriate.", "prevention": "Feed hygiene, rodent control, biosecurity, and food safety."}, {"name": "Klebsiella pneumoniae", "gram": "negative", "group": "rods", "arrangement": "Encapsulated rods", "identification": "Gram-negative, encapsulated, non-motile rod; lactose fermenter.", "hosts": "Cattle, horses, dogs, cats, and other animals.", "diseases": "Mastitis, pneumonia, urinary infections, and opportunistic disease.", "virulence": "Capsule, adhesins, siderophores, and endotoxin.", "diagnosis": "Culture-based identification and antimicrobial susceptibility testing.", "prevention": "Hygiene, environmental management, and prudent antimicrobial use."}, {"name": "Proteus mirabilis", "gram": "negative", "group": "rods", "arrangement": "Pleomorphic rods", "identification": "Gram-negative, highly motile rod; urease-positive; non-lactose fermenter.", "hosts": "Dogs, cats, horses, and other animals.", "diseases": "Urinary tract infections and wound infections.", "virulence": "Urease, motility, adhesins, and biofilm formation.", "diagnosis": "Urinalysis, culture, and susceptibility testing.", "prevention": "Urinary hygiene and appropriate clinical management."}, {"name": "Pseudomonas aeruginosa", "gram": "negative", "group": "rods", "arrangement": "Straight rods", "identification": "Gram-negative, aerobic, oxidase-positive, non-fermenting rod; often motile.", "hosts": "Many animal species; environmental organism.", "diseases": "Otitis, wound infections, mastitis, pneumonia, and opportunistic infections.", "virulence": "Exotoxins, pigments, biofilm, and secretion systems.", "diagnosis": "Culture-based identification and susceptibility testing.", "prevention": "Water and equipment hygiene, wound care, and infection control."}, {"name": "Brucella suis", "gram": "negative", "group": "coccobacilli", "arrangement": "Small coccobacilli", "identification": "Small Gram-negative facultative intracellular coccobacillus.", "hosts": "Pigs and wild suids; zoonotic.", "diseases": "Brucellosis, infertility, abortion, and reproductive disease.", "virulence": "Intracellular survival and smooth lipopolysaccharide.", "diagnosis": "Official testing and animal-health authority procedures.", "prevention": "Biosecurity, surveillance, and occupational protection."}, {"name": "Yersinia enterocolitica", "gram": "negative", "group": "rods", "arrangement": "Short rods or coccobacilli", "identification": "Gram-negative rod; non-spore-forming; facultative anaerobe.", "hosts": "Pigs are an important reservoir; other animals and humans.", "diseases": "Enteritis and foodborne zoonotic infection.", "virulence": "Invasin, Yersinia outer proteins, and other virulence factors.", "diagnosis": "Clinical and food-safety investigation with laboratory identification.", "prevention": "Food hygiene, safe pork handling, and sanitation."}, {"name": "Yersinia pseudotuberculosis", "gram": "negative", "group": "rods", "arrangement": "Short rods", "identification": "Gram-negative rod; facultative anaerobe.", "hosts": "Birds, rodents, ruminants, and other animals.", "diseases": "Yersiniosis, enteritis, lymphadenitis, and septicemic disease.", "virulence": "Invasins and Yersinia outer proteins.", "diagnosis": "Laboratory identification with clinical and epidemiological correlation.", "prevention": "Rodent control, feed protection, and sanitation."}, {"name": "Campylobacter jejuni", "gram": "negative", "group": "curved", "arrangement": "Curved or gull-wing rods", "identification": "Gram-negative curved, motile, microaerophilic rod.", "hosts": "Poultry, cattle, sheep, dogs, and humans.", "diseases": "Enteritis and foodborne zoonotic disease; reproductive disease is associated with other Campylobacter species.", "virulence": "Flagella, adhesins, and cytolethal distending toxin in some strains.", "diagnosis": "Fecal or tissue testing with appropriate laboratory methods.", "prevention": "Slaughter hygiene, food safety, and farm biosecurity."}, {"name": "Campylobacter fetus", "gram": "negative", "group": "curved", "arrangement": "Curved rods", "identification": "Gram-negative curved, motile, microaerophilic rod.", "hosts": "Cattle and sheep.", "diseases": "Bovine genital campylobacteriosis and ovine abortion.", "virulence": "Surface-layer proteins and adhesion factors.", "diagnosis": "Reproductive history and specialized laboratory testing.", "prevention": "Breeding hygiene, testing, and herd biosecurity."}, {"name": "Fusobacterium necrophorum", "gram": "negative", "group": "rods", "arrangement": "Pleomorphic rods", "identification": "Gram-negative, obligately anaerobic, non-spore-forming rod.", "hosts": "Cattle, sheep, and other animals.", "diseases": "Foot rot, liver abscesses, and necrotic infections.", "virulence": "Leukotoxin, endotoxin, and tissue-damaging factors.", "diagnosis": "Clinical and lesion assessment with anaerobic laboratory identification.", "prevention": "Foot hygiene, injury prevention, and prompt treatment of lesions."}, {"name": "Dichelobacter nodosus", "gram": "negative", "group": "rods", "arrangement": "Rods", "identification": "Gram-negative, obligately anaerobic rod.", "hosts": "Sheep and goats.", "diseases": "Contagious footrot.", "virulence": "Fimbriae and proteases.", "diagnosis": "Foot examination and laboratory identification when indicated.", "prevention": "Footbath programs, quarantine, and flock biosecurity."}, {"name": "Bacteroides fragilis group", "gram": "negative", "group": "rods", "arrangement": "Pleomorphic rods", "identification": "Gram-negative anaerobic rods; part of normal intestinal microbiota.", "hosts": "Various mammals.", "diseases": "Opportunistic abscesses and intra-abdominal infections.", "virulence": "Capsule and enzymes.", "diagnosis": "Clinical sampling and anaerobic laboratory identification.", "prevention": "Surgical and wound hygiene; appropriate veterinary care."}, {"name": "Actinobacillus lignieresii", "gram": "negative", "group": "rods", "arrangement": "Short rods or coccobacilli", "identification": "Gram-negative, non-motile rod.", "hosts": "Cattle and sheep.", "diseases": "Actinobacillosis (wooden tongue), with granulomatous soft-tissue lesions.", "virulence": "Adhesion factors and toxins.", "diagnosis": "Clinical lesion assessment and laboratory identification.", "prevention": "Prevent oral trauma and manage affected animals promptly."}, {"name": "Actinobacillus pleuropneumoniae", "gram": "negative", "group": "coccobacilli", "arrangement": "Coccobacilli", "identification": "Gram-negative, facultatively anaerobic coccobacillus.", "hosts": "Pigs.", "diseases": "Porcine pleuropneumonia.", "virulence": "Apx toxins, capsule, and lipopolysaccharide.", "diagnosis": "Respiratory disease assessment and laboratory identification.", "prevention": "Vaccination where appropriate, ventilation, and biosecurity."}, {"name": "Riemerella anatipestifer", "gram": "negative", "group": "rods", "arrangement": "Rods", "identification": "Gram-negative rod; non-motile.", "hosts": "Ducks and other waterfowl.", "diseases": "Septicemia, polyserositis, and respiratory or neurological signs.", "virulence": "Capsule and multiple virulence-associated factors.", "diagnosis": "Clinical assessment and laboratory identification.", "prevention": "Water hygiene, sanitation, and flock biosecurity."}, {"name": "Ornithobacterium rhinotracheale", "gram": "negative", "group": "rods", "arrangement": "Pleomorphic rods", "identification": "Gram-negative pleomorphic rod.", "hosts": "Chickens and turkeys.", "diseases": "Respiratory disease, airsacculitis, and pneumonia.", "virulence": "Adhesion and tissue-damaging factors.", "diagnosis": "Respiratory sample testing and laboratory identification.", "prevention": "Ventilation, biosecurity, and vaccination where available."}, {"name": "Eikenella corrodens", "gram": "negative", "group": "rods", "arrangement": "Small rods", "identification": "Gram-negative facultative anaerobic rod; oxidase-positive.", "hosts": "Occasional animal infections; oral microbiota association.", "diseases": "Opportunistic wound and soft-tissue infections.", "virulence": "Adhesion and tissue-associated factors.", "diagnosis": "Clinical sampling and laboratory identification.", "prevention": "Wound hygiene and veterinary assessment."}];
+const cards=document.getElementById('cards'), search=document.getElementById('search'), gram=document.getElementById('gram'), group=document.getElementById('group');
+const groupNames={cocci:'Cocci',spore:'Spore-forming bacilli',nonspore:'Non-spore-forming bacilli',branch:'Branching bacteria',coccobacilli:'Coccobacilli',rods:'Rods',curved:'Curved rods'};
+document.getElementById('count').textContent=bacteria.length;
+[...new Set(bacteria.map(b=>b.group))].sort().forEach(g=>{let o=document.createElement('option');o.value=g;o.textContent=groupNames[g]||g;group.appendChild(o)});
+
+const realPhotos = {
+  "Staphylococcus aureus": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/2297/2297_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 2297",
+    credit:"CDC / Dr. Richard Facklam",
+    caption:"Gram-stained photomicrograph showing Gram-positive cocci.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=2297"
+  },
+  "Staphylococcus pseudintermedius": {
+    url:"https://worldofbacteria.org/downloads/bacteria/staphylococcus-pseudintermedius/staphylococcus-pseudintermedius-gram-1.jpg",
+    source:"World of Bacteria microscopy atlas",
+    credit:"World of Bacteria",
+    caption:"Gram-stained photomicrograph showing staphylococcal cocci in clusters.",
+    sourceUrl:"https://worldofbacteria.org/staphylococcus-pseudintermedius.php"
+  },
+  "Streptococcus agalactiae": {
+    url:"https://worldofbacteria.org/downloads/bacteria/streptococcus-agalactiae/streptococcus-agalactiae-gram-1.jpg",
+    source:"World of Bacteria microscopy atlas",
+    credit:"World of Bacteria",
+    caption:"Gram-stained photomicrograph showing Gram-positive cocci in chains.",
+    sourceUrl:"https://worldofbacteria.org/streptococcus-agalactiae.php"
+  },
+  "Escherichia coli": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/2112/2112_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 2112",
+    credit:"CDC",
+    caption:"Gram-stained photomicrograph illustrating rod-shaped E. coli.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=2112"
+  },
+  "Pasteurella multocida": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/3621/3621_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 3621",
+    credit:"CDC / Dr. R. Weaver",
+    caption:"Gram-stained photomicrograph of P. multocida.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=3621"
+  },
+  "Mannheimia haemolytica": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/16101/16101_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 16101",
+    credit:"CDC / Dr. W.A. Clark",
+    caption:"Gram-stained photomicrograph of M. haemolytica.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=16101"
+  },
+  "Salmonella enterica": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/23772/23772_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 23772",
+    credit:"CDC / Steven A. Schroeder, MD",
+    caption:"Colorized scanning electron micrograph of a Salmonella species cell; genus-level image.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=23772"
+  },
+  "Brucella suis": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/19255/19255_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 19255",
+    credit:"CDC / Dr. W.A. Clark",
+    caption:"Gram-stained photomicrograph of Brucella suis.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=19255"
+  },
+  "Actinobacillus lignieresii": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/1258/1258_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 1258",
+    credit:"CDC / Dr. W.A. Clark",
+    caption:"Gram-stained photomicrograph of Actinobacillus lignieresii.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=1258"
+  },
+  "Bacillus anthracis": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/20496/20496_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 20496",
+    credit:"CDC / Dr. Brodsky",
+    caption:"Gram-stained photomicrograph of Bacillus anthracis at 1150×.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=20496"
+  },
+  "Clostridium perfringens": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/11196/11196_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 11196",
+    credit:"CDC / Don Stalons",
+    caption:"Gram-stained photomicrograph of Clostridium perfringens at 1000×.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=11196"
+  },
+  "Clostridium botulinum": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/2131/2131_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 2131",
+    credit:"CDC / Dr. George Lombard",
+    caption:"Gram-stained photomicrograph of Clostridium botulinum type A with endospores.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=2131"
+  },
+  "Clostridium chauvoei": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/29059/29059_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 29059",
+    credit:"CDC / Dr. Lillian V. Holdeman",
+    caption:"Gram-stained photomicrograph of Clostridium chauvoei at 956×.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=29059"
+  },
+  "Clostridium tetani": {
+    url:"https://wwwn.cdc.gov/phil/PHIL_Images/29045/29045_lores.jpg",
+    source:"CDC Public Health Image Library (PHIL), image 29045",
+    credit:"CDC / Dr. Lillian V. Holdeman",
+    caption:"Gram-stained photomicrograph of Clostridium tetani at 956×.",
+    sourceUrl:"https://wwwn.cdc.gov/phil/Details.aspx?pid=29045"
+  }
+};
+
+// Real microscopy references used only when an exact species image is not available.
+// Captions explicitly identify these as morphology references, not species confirmation.
+function photoMarkup(b){
+  const p = realPhotos[b.name];
+  if(!p){
+    return `<figure class="real-photo missing-photo">
+      <div class="photo-pending">🔬<br><b>Species-specific micrograph not verified yet</b></div>
+      <figcaption>No substitute image is shown here, to avoid confusing this bacterium with another species. A verified microscope image will be added when an exact source is available.</figcaption>
+    </figure>`;
+  }
+  return `<figure class="real-photo">
+    <img src="${p.url}" alt="Microscope photomicrograph of ${b.name}" loading="lazy" onerror="this.alt='Microscopy image unavailable';this.style.minHeight='160px';this.style.background='#eef2f7'">
+    <figcaption><b>Species-specific microscope image</b><br>${p.caption}<br>${p.source}. <a href="${p.sourceUrl}" target="_blank" rel="noopener">View image source</a></figcaption>
+  </figure>`;
+}
+
+
+function biochemicalNotes(b){
+  const text = (b.identification + " " + b.diagnosis).toLowerCase();
+  const tests = [
+    ["Catalase", /catalase/.test(text)],
+    ["Coagulase", /coagulase/.test(text)],
+    ["Oxidase", /oxidase/.test(text)],
+    ["Urease", /urease/.test(text)],
+    ["Lactose fermentation", /lactose/.test(text)],
+    ["Hemolysis", /hemolytic|hemolysis|beta-hemolysis|alpha-hemolytic/.test(text)],
+    ["Bile-esculin", /bile.esculin/.test(text)],
+    ["Motility", /motile|motility/.test(text)]
+  ].filter(x=>x[1]).map(x=>x[0]);
+  return tests.length
+    ? `Tests specifically mentioned in this profile: ${tests.join(", ")}.`
+    : "Specific biochemical reactions are not listed in the current profile. They must be confirmed from a validated organism-specific reference.";
+}
+function serologyNotes(b){
+  const t = (b.identification + " " + b.diagnosis).toLowerCase();
+  if(/serotyp|serolog|antigen|antibody|official testing/.test(t)){
+    return "Serological or antigen-based testing may be relevant for this organism. The exact assay and interpretation depend on the disease, sample and validated veterinary laboratory method.";
+  }
+  return "A routine serological test is not specified in this profile. Serology is not applicable or required for every bacterial infection; use it only when supported by organism-specific veterinary guidance.";
+}
+function cultureNotes(b){
+  const t = (b.identification + " " + b.diagnosis).toLowerCase();
+  const clues = [];
+  if(/anaerob/.test(t)) clues.push("anaerobic growth requirements are noted");
+  if(/microaerophil/.test(t)) clues.push("microaerophilic growth requirements are noted");
+  if(/non-ferment/.test(t)) clues.push("a non-fermenting profile is noted");
+  if(/lactose ferment/.test(t)) clues.push("lactose fermentation is noted");
+  if(/non-lactose/.test(t)) clues.push("non-lactose fermentation is noted");
+  return clues.length
+    ? `Culture-related characteristics in this profile: ${clues.join("; ")}. Exact medium and colony appearance are not yet source-verified here.`
+    : "The exact culture medium and colony morphology are not specified in the current profile. They are left unfilled rather than guessed.";
+}
+function expandedPanels(b){
+  return `<div class="study-panels">
+    <section class="study-panel"><h5>Culture media & colony appearance</h5>
+      <p>${cultureNotes(b)}</p>
+      <p class="pending">Organism-specific culture plate photo: not added until the image and medium are verified.</p>
+    </section>
+    <section class="study-panel"><h5>Biochemical tests</h5>
+      <p>${biochemicalNotes(b)}</p>
+      <p class="pending">Test-result images: pending verified organism-specific references.</p>
+    </section>
+    <section class="study-panel"><h5>Serology</h5>
+      <p>${serologyNotes(b)}</p>
+      <p class="pending">Serology image: not displayed unless a matching validated test image is available.</p>
+    </section>
+    <section class="study-panel"><h5>Diseases in animals</h5>
+      <p>${b.diseases}</p>
+      <p><b>Hosts:</b> ${b.hosts}</p>
+      <p class="pending">Clinical lesion/disease photographs: pending verified veterinary image sources.</p>
+    </section>
+  </div>`;
+}
+
+function render(){
+ const q=search.value.trim().toLowerCase(), g=gram.value, c=group.value;
+ const items=bacteria.filter(b=>(g==='all'||b.gram===g)&&(c==='all'||b.group===c)&&[b.name,b.arrangement,b.identification,b.hosts,b.diseases,b.virulence].join(' ').toLowerCase().includes(q));
+ cards.innerHTML=items.map(b=>`<article class="bcard"><div class="latin">${b.name}</div><span class="gram ${b.gram}">${b.gram==='positive'?'GRAM-POSITIVE':'GRAM-NEGATIVE'}</span><span class="tag">${groupNames[b.group]||b.group}</span><p><b>Morphology:</b> ${b.arrangement}</p><p><b>Veterinary significance:</b> ${b.diseases}</p><details><summary>View complete study profile</summary><dl><dt>Identification</dt><dd>${b.identification}</dd><dt>Hosts</dt><dd>${b.hosts}</dd><dt>Virulence factors</dt><dd>${b.virulence}</dd><dt>Diagnosis</dt><dd>${b.diagnosis}</dd><dt>Prevention</dt><dd>${b.prevention}</dd></dl>
+<div class="in-site-lab">
+  <h4>Microscopy image</h4>
+  ${photoMarkup(b)}
+  <p><b>Gram-stain expectation:</b> ${b.gram==='positive'?'Purple/violet when the organism is Gram-positive under a satisfactory stain.':'Pink/red counterstain when the organism is Gram-negative under a satisfactory stain.'}</p>
+  <p><b>Diagnostic focus:</b> ${b.diagnosis}</p>
+  <p class="small">Microscopic appearance alone cannot confirm bacterial species; use validated laboratory identification.</p>
+</div>
+${expandedPanels(b)}
+</details></article>`).join('');
+ document.getElementById('empty').classList.toggle('hidden',items.length!==0);
+}
+function setGram(value){gram.value=value;document.querySelectorAll('.navbtn').forEach(x=>x.classList.toggle('active',x.dataset.gram===value));render()}
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>setGram(b.dataset.gram)));
+search.addEventListener('input',render);gram.addEventListener('change',()=>{document.querySelectorAll('.navbtn').forEach(x=>x.classList.toggle('active',x.dataset.gram===gram.value));render()});group.addEventListener('change',render);
+document.getElementById('reset').addEventListener('click',()=>{search.value='';group.value='all';setGram('all')});
+render();
+</script></body></html>
